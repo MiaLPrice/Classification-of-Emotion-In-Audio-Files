@@ -31,7 +31,7 @@ for each in onlyfiles:
 for_csv = pd.DataFrame(for_df, columns = ['file_name' , 'Modality', 'Voice_channel', 'Emotion', 'Intensity', 'Statement', 'Repetition', 'Actor', 'Gender']) 
 
 # write dataframe to csv
-for_csv.to_csv("./ravdess_audio_file_attributes.csv", sep=',',index=False)
+for_csv.to_csv("./files/ravdess_audio_file_attributes.csv", sep=',',index=False)
 
 
 emotions = pd.DataFrame(for_emotion, columns = ['file_name', 'Emotion'])
@@ -40,4 +40,4 @@ emotions = pd.DataFrame(for_emotion, columns = ['file_name', 'Emotion'])
 x = pd.get_dummies(emotions['Emotion'])
 emotions  = pd.concat([emotions, x], axis=1, join='inner')
 emotions = emotions.drop(columns = ['Emotion'])
-emotions.to_csv("./emotion.csv", sep=',',index=False)
+emotions.to_csv("./files/emotion.csv", sep=',',index=False)
